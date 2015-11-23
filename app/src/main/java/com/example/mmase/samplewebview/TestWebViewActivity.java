@@ -1,10 +1,10 @@
 package com.example.mmase.samplewebview;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
 
-public class TestWebViewActivity extends AppCompatActivity {
+public class TestWebViewActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
