@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,6 +15,13 @@ public class TestWebViewActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_web_view);
         WebView myWebView = (WebView)findViewById(R.id.mywebview);
+        myWebView.setWebViewClient(new WebViewClient() {
+                                     @Override
+                                     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                                         return false;
+                                     }
+                                 }
+        );
         myWebView.loadUrl("http://www.yahoo.co.jp");
 
         findViewById(R.id.go_btn).setOnClickListener(this);
